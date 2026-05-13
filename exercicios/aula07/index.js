@@ -6,19 +6,20 @@
 // Não mexa no arquivo index.test.js.
 
 // Exercício 1 — objetoParaJSON
-export function objetoParaJSON(objeto) {
-  // escreva seu código aqui
+  export function criarSaudacao(nome) {
+    return `Olá, ${nome}!`;
+  }
 }
 
 // Exercício 2 — jsonParaObjeto
-export function jsonParaObjeto(texto) {
-  // escreva seu código aqui
-}
+  export function filtrarAprovados(alunos) {
+    return alunos.filterAprovados(alunos => alunos.nota >= 60);
+  }
 
 // Exercício 3 — clonarObjeto
-export function clonarObjeto(objeto) {
-  // escreva seu código aqui
-}
+  export function extrairNomes(alunos) {
+    return alunos.map(aluno => aluno.nome);
+  } 
 
 // ──────────────────────────────────────────────────
 // Função auxiliar — simula uma consulta ao banco que demora 100ms
@@ -33,11 +34,14 @@ function simularConsulta(id) {
 }
 
 // Exercício 4 — buscarDados
-export async function buscarDados(id) {
-  // escreva seu código aqui
-}
+export function buscarDados(alunos, nome) {
+  return alunos.find(aluno => aluno.nome === nome);
+  }
+
 
 // Exercício 5 — dividirSeguro
-export async function dividirSeguro(a, b) {
-  // escreva seu código aqui
+export function calcularMedia(notas) {
+  if (notas.length === 0) return 0;
+  const soma = notas.reduce((total, n) => total + n, 0);
+  return soma / notas.length;
 }
